@@ -1,3 +1,10 @@
+#TODO
+#Create print_map function
+#Move tile integers/values into a dictionary
+#Decide on Classes for Player character
+#
+
+
 import climage
 
 for i in range(3):
@@ -10,17 +17,23 @@ map = [[0, 1, 0, 1, 0],
        [1, 0, 0, 0, 1],
        [1, 1, 1, 1, 1]]
 
-
-
+#Algorithm to print the map
 for i in range(len(map)):
+
+    mapStorage = []
+
     for j in range(len(map[i])):
-        if map[i][j] == 1:
-            print("|*****|", end = "")
-        else:
-            print("   -   ", end = "")
+        mapStorage.append(map[i][j])
     
-    print()
-    print()
+    for k in range(3):
+        for l in range(len(mapStorage)):
+            if mapStorage[l] == 1:
+                print("*******", end="")
+            else:
+                print("   -   ", end="")
+        print()
+    
+
 
 
     
