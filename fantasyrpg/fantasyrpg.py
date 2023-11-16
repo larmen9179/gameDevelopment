@@ -3,6 +3,8 @@ import climage
 for i in range(3):
     print()
 
+
+
 map = [[0, 1, 0, 1, 0],
        [1, 1, 0, 1, 1],
        [1, 0, 0, 0, 1],
@@ -26,7 +28,12 @@ for i in range(len(map)):
                 print("   -   ", end="")
         print()
     
+#function for main gamePlay
+def mainGame():
+    print("Welcome to Fantasy RPG")
 
+    print("This game is a text-based adventure...")
 
+    print("Let's go over the controls...")
 
-    
+mainGame()
