@@ -28,12 +28,14 @@ for i in range(len(map)):
                 print("   -   ", end="")
         print()
     
+#function for welcoming message to player
+def welcomeMessage():
+    print("Welcome to Fantasy RPG...")    
+    print("This game is meant to be a text-adventure game...")
+    print("The player will be able to type in commands to control actions...")
+
 #function for main gamePlay
 def mainGame():
-    print("Welcome to Fantasy RPG")
-
-    print("This game is a text-based adventure...")
-
-    print("Let's go over the controls...")
+   welcomeMessage()
 
 mainGame()
