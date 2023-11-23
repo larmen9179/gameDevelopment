@@ -1,5 +1,11 @@
 import climage
 
+class Player():
+    def __init__ (self):
+        self.health = 100
+        self.inventory = []
+
+
 for i in range(3):
     print()
 
@@ -36,6 +42,8 @@ def welcomeMessage():
 
 #function for main gamePlay
 def mainGame():
-   welcomeMessage()
+    welcomeMessage()
+
+    
 
 mainGame()
