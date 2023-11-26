@@ -38,12 +38,19 @@ for i in range(len(map)):
 def welcomeMessage():
     print("Welcome to Fantasy RPG...")    
     print("This game is meant to be a text-adventure game...")
-    print("The player will be able to type in commands to control actions...")
 
+def 
 #function for main gamePlay
 def mainGame():
+
     welcomeMessage()
 
-    
+    while True:
+        continue
+
+
+
 
 mainGame()
+
+    
