@@ -38,17 +38,33 @@ for i in range(len(map)):
 def welcomeMessage():
     print("Welcome to Fantasy RPG...")    
     print("This game is meant to be a text-adventure game...")
+    print("Type any of the options below...")
+    print()
 
-def 
+#printing various commands
+def menu():
+    print("MENU: ")
+    print("  1. Play")
+    print("  2. Tutorial Page")
+    print("  3. Quit")
+    print()
+
+    return input("Enter in your option number: ")
+
 #function for main gamePlay
 def mainGame():
 
     welcomeMessage()
 
+    #Initializing the variable to hold the player's choice from the menu
+    playerOption = ""
+
     while True:
-        continue
 
 
+        playerOption = menu()
+
+        
 
 
 mainGame()
