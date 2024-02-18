@@ -16,10 +16,24 @@ class Player:
         self.health = health
         self.position = [1, 1]
         
-    def positionChange(self, position):
-        self.position = position
-        
+#enemy class
+class Enemy:
     
+    def __init__self(self, name, health, position):
+        self.name = name
+        self.health = health
+        self.position = position
+
+#Determining where to place enemies
+def enemyPlacement():
+    
+    possiblePlacement = []
+
+    for i in range(len(worldMap)):
+        for j in range(len(worldMap)):
+            if worldMap[i][j] == '.':
+                possiblePlacement.append([i, j])
+                
 #function to print the world map
 def printMap(worldMap):
     
@@ -35,7 +49,6 @@ def printMap(worldMap):
             else:
                 print(worldMap[i][j], end = "")
         print()
-
 
 #menu for various player actions
 def menu():
@@ -137,9 +150,7 @@ def movement():
             print("Going back to the menu...")
             break
         
-        
-            
-#function for calling methods based on player choice
+#function for calling methods based on player menu choice
 def choiceControl(choice):
     if choice == '1':
         movement()
@@ -167,6 +178,15 @@ def main():
         
         choiceControl(playerChoice)
         
+        
+        
+        
+        
+        
 Jimmy = Player("Jimmy", 400, [1, 1])
+
+
+
+        
 
 main()
