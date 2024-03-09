@@ -15,6 +15,7 @@ font = py.font.Font(None, 24)
 textColor = (255, 255, 255)
 
 def game():
+
     while True:
         for event in py.event.get():
             if event.type == py.QUIT:
@@ -36,7 +37,9 @@ def welcomeMessage():
     
     message = "Welcome to fantasyrpg"
 
-    while True:
+    startTime = py.time.get_ticks()
+
+    while py.time.get_ticks() - startTime < 4000:
 
         for event in py.event.get():
             if event.type == py.QUIT:
