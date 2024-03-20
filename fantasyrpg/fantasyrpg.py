@@ -30,8 +30,23 @@ def game():
         # Update the display
         py.display.flip()
 
-def mainMenu():
-    pass
+def actionMenu():
+    
+    menu = "Action Menu:\n1. Move\n2. Attack\n3. Use \n4. Info\n5. Quit"
+
+    menuChoices = menu.split("\n")
+
+    print(menuChoices)
+
+    yOffset = 0
+
+    for option in menuChoices:
+        currOption = font.render(option, False, textColor)
+        screen.blit(currOption, (10, yOffset))
+        yOffset += currOption.get_height()
+
+    py.display.flip()
+
 
 def welcomeMessage():
     
@@ -39,7 +54,7 @@ def welcomeMessage():
 
     startTime = py.time.get_ticks()
 
-    while py.time.get_ticks() - startTime < 4000:
+    while py.time.get_ticks() - startTime < 2000:
 
         for event in py.event.get():
             if event.type == py.QUIT:
@@ -50,25 +65,15 @@ def welcomeMessage():
         renderedText = font.render(message, False, textColor)
         screen.blit(renderedText, (10, 10))
 
-        
-
         py.display.flip()
-                    
-        
-def main():
-
-    welcomeMessage()
-
-    while True:
-
-        userInput = textInput()
-
-        print(userInput)
 
 # Lets the user enter their command into the game
 def textInput():
+
+    font = py.font.Font(None, 18)
+
     inputText = ""
-    input_rect = py.Rect(10, (height//3) * 2, width - 20, 40)
+    input_rect = py.Rect(10, (height//3) * 2, width - 20, 20)
     cursor = py.Rect(input_rect.left + len(inputText), input_rect.y, 3, input_rect.height - 8)
     cursor_visible = True
     cursor_timer = 0
@@ -91,13 +96,13 @@ def textInput():
 
         # Render the input text
         rendered_text = font.render(inputText, True, textColor)
-        py.draw.rect(screen, textColor, input_rect, 2)
+        py.draw.rect(screen, textColor, input_rect, 1)
         
         # Update the cursor location
         text_width, _ = font.size(inputText)
         cursor = py.Rect(input_rect.x + text_width + 5, input_rect.y, 3, input_rect.height)
 
-        screen.blit(rendered_text, (input_rect.x + 5, input_rect.y + 11))
+        screen.blit(rendered_text, (input_rect.x + 5, input_rect.y + 4))
 
        
         # Activates the blinking cursor
@@ -108,8 +113,18 @@ def textInput():
         if cursor_visible:
             py.draw.rect(screen, textColor, cursor)
 
+        actionMenu()
 
         py.display.flip()
+
+def main():
+
+    welcomeMessage()
+
+    while True:
+
+        userInput = textInput()
+
 
 main()
     
